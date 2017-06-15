@@ -3,6 +3,8 @@ $USAFA_BLUE: rgba(1, 77, 153, 1);
 $TAUPE: rgba(70, 55, 48, 1);
 $SEA_SERPENT: rgba(75, 198, 185, 1);
 $MEDIUM_SKY_BLUE: rgba(137, 232, 232, 1);
+$SPACE_CADET: rgba(25, 37, 76, 1);
+$WHITE: rgba(255, 255, 255, 1);
 
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
@@ -11,24 +13,48 @@ $MEDIUM_SKY_BLUE: rgba(137, 232, 232, 1);
     border-radius: $radius;
 }
 
+@mixin transition($attr, $time, $time-func:ease) {
+    transition:$attr $time $time-func;
+    -moz-transition:$attr $time $time-func;
+    -webkit-transition:$attr $time $time-func;
+    -o-transition:$attr $time $time-func;
+}
+
 body {
     height: 100%;
     width: 100%;
-    margin: auto;
-    background-color: $LIGHT_YELLOW;
+    background-color: $SPACE_CADET;
+    margin: 50px 100px;
     position: relative;
-    font-size: 12px;
-    .container {
-        width: 500px;
-        height: 100%;
-        margin: auto;
-        .brief {
-            display: inline-block;
-            background-color: $MEDIUM_SKY_BLUE;
+    font-size: 16px;
+    .brief {
+        display: inline-block;
+        margin: 10px;
+        width: 200px;
+        height: 400px;
+        background-color: $LIGHT_YELLOW;
+        p {
+            font-size: 20px;
         }
-        .detail {
-            display: inline-block;
-            background-color: $USAFA_BLUE;
+        img {
+            @include border-radius(5px);
+            @include transition(transform, 0.5s);
+            width: inherit;
+            &:hover {
+                transform: scale(1.1, 1.1);
+                overflow: true;
+            }
         }
     }
+    .detail {
+        display: inline-block;
+        margin: 10px;
+        width: 200px;
+        height: 100%;
+        background-color: $LIGHT_YELLOW;
+        p {
+            font-size: 20px;
+        }
+    }
+    
 }
