@@ -1,10 +1,4 @@
-$LIGHT_YELLOW: rgba(242, 206, 208, 1);
-$USAFA_BLUE: rgba(1, 77, 153, 1);
-$TAUPE: rgba(70, 55, 48, 1);
-$SEA_SERPENT: rgba(75, 198, 185, 1);
-$MEDIUM_SKY_BLUE: rgba(137, 232, 232, 1);
-$SPACE_CADET: rgba(25, 37, 76, 1);
-$WHITE: rgba(255, 255, 255, 1);
+$GLITTER: rgba(232, 243, 249, 1);
 
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
@@ -20,41 +14,54 @@ $WHITE: rgba(255, 255, 255, 1);
     -o-transition:$attr $time $time-func;
 }
 
+@font-face {
+  font-family: Raleway;
+  src: url(../fonts/raleway/webfonts/raleway_thin-webfont.woff);
+}
+
+@font-face {
+  font-family: Hattori-Hanzo;
+  src: url(../fonts/Hattori-Hanzo/Hattori_Hanzo.otf);
+}
+
 body {
     height: 100%;
     width: 100%;
-    background-color: $SPACE_CADET;
-    margin: 50px 100px;
+    background: #00FF00 url(../img/grey_wash_wall_@2X.png) repeat;
+    color: $GLITTER;
     position: relative;
     font-size: 16px;
-    .brief {
-        display: inline-block;
-        margin: 10px;
-        width: 200px;
-        height: 400px;
-        background-color: $LIGHT_YELLOW;
-        p {
-            font-size: 20px;
+    font-family: Hattori-Hanzo, serif;
+
+    .container {
+        $container_width: 600px;
+        width: $container_width;
+        height: 100%;
+        padding: 30px;
+        margin: auto;
+        font-size: 16px;
+        div {
+            vertical-align: top;
+            display: inline-block;
+            padding: 10px;
         }
-        img {
-            @include border-radius(5px);
-            @include transition(transform, 0.5s);
-            width: inherit;
-            &:hover {
-                transform: scale(1.1, 1.1);
-                overflow: true;
+        .brief {
+            height: 400px;
+            width: ($container_width / 3 - 25px);
+            img {
+                margin-top: 30px;
+                @include border-radius(4px);
+                @include transition(transform, 0.5s);
+                width: inherit;
+                &:hover {
+                    transform: scale(1.06, 1.06);
+                    overflow: true;
+                }
             }
         }
-    }
-    .detail {
-        display: inline-block;
-        margin: 10px;
-        width: 200px;
-        height: 100%;
-        background-color: $LIGHT_YELLOW;
-        p {
-            font-size: 20px;
+        .detail {
+            height: 100%;
+            width: ($container_width / 3 * 2 - 25px);
         }
     }
-    
 }
