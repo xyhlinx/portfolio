@@ -30,7 +30,7 @@ body {
     background: #00FF00 url(../img/grey_wash_wall_@2X.png) repeat;
     color: $GLITTER;
     position: relative;
-    font-size: 16px;
+    font-size: 14px;
     font-family: Hattori-Hanzo, serif;
 
     .container {
@@ -39,7 +39,7 @@ body {
         height: 100%;
         padding: 30px;
         margin: auto;
-        font-size: 16px;
+        font-size: 12px;
         div {
             vertical-align: top;
             display: inline-block;
@@ -62,6 +62,13 @@ body {
         .detail {
             height: 100%;
             width: ($container_width / 3 * 2 - 25px);
+            
+            .video {
+                width: ($container_width / 3 * 2 - 45px);
+                height: ($container_width / 3 * 2 - 45px) * 9 / 16;
+                margin: auto;
+            }
+        
         }
     }
 }

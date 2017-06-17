@@ -12,14 +12,14 @@ body {
   background: #00FF00 url(../img/grey_wash_wall_@2X.png) repeat;
   color: #e8f3f9;
   position: relative;
-  font-size: 16px;
+  font-size: 14px;
   font-family: Hattori-Hanzo, serif; }
   body .container {
     width: 600px;
     height: 100%;
     padding: 30px;
     margin: auto;
-    font-size: 16px; }
+    font-size: 12px; }
     body .container div {
       vertical-align: top;
       display: inline-block;
@@ -44,3 +44,7 @@ body {
     body .container .detail {
       height: 100%;
       width: 375px; }
+      body .container .detail .video {
+        width: 355px;
+        height: 199.6875px;
+        margin: auto; }
